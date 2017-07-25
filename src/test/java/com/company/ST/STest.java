@@ -18,7 +18,8 @@ public class STest {
 
 	@Test
 	public void f() throws InterruptedException {
-		driver.get("http://192.168.99.100:8282/");
+		String appUrl = System.getProperty("react.app");
+		driver.get(appUrl);
 		driver.manage().window().maximize();
 		WebElement element = driver.findElement(By.xpath("//div[normalize-space()='Email Id']/input"));
 		element.sendKeys("pk@gmail.com");
