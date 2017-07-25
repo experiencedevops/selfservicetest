@@ -20,6 +20,7 @@ public class STest {
 	public void f() throws InterruptedException {
 		String appUrl = System.getProperty("react.app");
 		driver.get(appUrl);
+		System.out.println("Navigating the appUrl"+appUrl);
 		driver.manage().window().maximize();
 		WebElement element = driver.findElement(By.xpath("//div[normalize-space()='Email Id']/input"));
 		element.sendKeys("pk@gmail.com");
@@ -29,6 +30,7 @@ public class STest {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		WebElement elements = driver.findElement(By.xpath("//div[normalize-space()='Password']/parent::*/button"));
 		elements.submit();
+		System.out.println("Entered Email and Password.");
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		try {
 			Thread.sleep(2000);
@@ -42,12 +44,14 @@ public class STest {
 		elementpd.click();
 		Thread.sleep(2000);
 		Thread.sleep(2000);
+		System.out.println("Logging out of application.");
 	}
 
 	@BeforeMethod
 	public void beforeMethod() {
 		// String nodeUrl = "http://192.168.99.100:4444/wd/hub";
 		String nodeUrl = System.getProperty("jenkins.nodeUrl");
+		System.out.println("Capability firefox:");
 		DesiredCapabilities capability = DesiredCapabilities.firefox();
 		capability.setPlatform(org.openqa.selenium.Platform.ANY);
 		try {
@@ -60,7 +64,7 @@ public class STest {
 	@AfterMethod
 	public void afterMethod() {
 		driver.quit();
-		System.out.println("firefox");
+		System.out.println("firefox quited");
 	}
 
 }

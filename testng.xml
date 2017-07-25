@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test name="Test">
+<suite name="Testing in Browser">
+  <test name="Test in Firefox">
     <classes>
       <class name="com.company.ST.STest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test in Crome">
+    <classes>
+      <class name="com.company.ST.CTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
